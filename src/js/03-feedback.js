@@ -1,3 +1,5 @@
+import throttle from 'lodash.throttle';
+
 const LOCAL_KEY = 'feedback-form-state';
 
 form = document.querySelector('.feedback-form');
@@ -26,7 +28,7 @@ function onFormSubmit(e) {
   console.log({ email: email.value, message: message.value });
 
   if (email.value === '' || message.value === '') {
-    return alert('Please fill in all the fields!');
+    return alert('Будь ласка, заповніть всі поля!');
   }
 
   localStorage.removeItem(LOCAL_KEY);
